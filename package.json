@@ -1,0 +1,40 @@
+{
+  "name": "SHIMIfich",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SHIMIfich – SHIMI® Admin Dashboard Offline (Electron)",
+  "main": "main.js",
+  "author": "Archétyp Africa / Africa Agro Partners",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder -w"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.archetyp.shimi.shimifich",
+    "productName": "SHIMIfich",
+    "files": [
+      "**/*",
+      "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/*.{map,ts,tsx}",
+      "!**/.*",
+      "!**/*.log"
+    ],
+    "extraResources": [
+      {
+        "from": "app",
+        "to": "app"
+      }
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "artifactName": "SHIMIfich_${version}.exe"
+    }
+  }
+}
